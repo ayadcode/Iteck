@@ -1,0 +1,242 @@
+$primary: #00a6fb;
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  outline: none;
+}
+
+button {
+  outline: none;
+}
+
+.section {
+  margin-bottom: 10rem;
+}
+
+.header,
+.pragraph {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-bottom: 3rem;
+  h2 {
+    position: relative;
+    border-bottom: 3px solid $primary;
+    padding-bottom: 15px;
+    span {
+      color: $primary;
+    }
+    &::before {
+      content: "";
+      width: 25px;
+      height: 25px;
+      background-color: $primary;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -0.8rem;
+      left: 0;
+      box-shadow: 0 0 5px 5px rgba($primary, 0.2);
+    }
+  }
+}
+
+// __________ global ______________
+
+.main {
+  margin-top: 10rem;
+  .hero {
+    position: relative;
+    .background {
+      position: absolute;
+      top: -15rem;
+      right: 0rem;
+      width: 80%;
+    }
+    .github1 {
+      position: absolute;
+      top: -10rem;
+    }
+    .github {
+      position: absolute;
+      bottom: 0;
+      left: 1rem;
+    }
+    .javascript {
+      position: absolute;
+      top: 70%;
+      left: 45%;
+    }
+    .slack {
+      position: absolute;
+      top: 0;
+      left: 30%;
+    }
+    .hero-container {
+      margin-bottom: 25rem;
+      .hero-content {
+        h3 {
+          color: $primary;
+        }
+        h1 {
+          color: white;
+          font-size: 50px;
+          .lg {
+            font-weight: 700;
+          }
+          .co {
+            color: $primary;
+          }
+          .sm {
+            font-size: 40px;
+            font-weight: 400;
+          }
+        }
+        p {
+          color: white;
+          font-size: 22px;
+        }
+        .contact {
+          position: relative;
+          .control {
+            padding: 15px 80px 15px 20px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #d9d9d9;
+            &:focus {
+              outline: none;
+            }
+            &::placeholder {
+              opacity: 0.5;
+            }
+          }
+          .btn {
+            position: absolute;
+            background-color: $primary;
+            color: white;
+            padding: 16px 32px 16px 40px;
+            border-radius: 32px;
+            font-size: 18px;
+          }
+        }
+      }
+      .hero-img {
+        .hero-photo {
+          position: absolute;
+          top: -50%;
+          left: 50%;
+        }
+      }
+    }
+  }
+  .services {
+    position: relative;
+    .container {
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .card {
+          position: relative;
+          z-index: 10;
+          flex: 0 1 30%;
+          padding: 1.5rem;
+          background: rgba(255, 255, 255, 0.1);
+          box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+          border: 1px solid $primary;
+          backdrop-filter: blur(50px);
+          margin: 1rem;
+          .card-head,
+          .card-para {
+            color: white;
+          }
+          .card-link {
+            display: flex;
+            justify-content: end;
+            a {
+              color: $primary;
+            }
+          }
+          .card-imge {
+            padding: 1rem 0;
+          }
+        }
+      }
+    }
+    .big {
+      position: absolute;
+      top: 20%;
+      right: 8%;
+    }
+    .smail {
+      position: absolute;
+      top: 40%;
+      left: 15%;
+      img {
+        width: 50%;
+      }
+    }
+  }
+  .projects {
+    .container-fluid {
+      padding: 5rem 0;
+      box-shadow: 0 0 30px -3px rgba(255, 255, 255, 0.1);
+    }
+    .container {
+      .row {
+        display: flex;
+        align-items: center;
+        .col-5 {
+          padding-right: 2rem;
+          .accordion {
+            .accordion-item {
+              border: none;
+              outline: none;
+              .accordion-header {
+                .accordion-button {
+                  color: white;
+                  background-color: #111111;
+                  border: none;
+                  font-size: 24px;
+                  font-weight: bold;
+                  &::after {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='white' class='bi bi-arrow-left' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8'/%3E%3C/svg%3E");
+                  }
+                }
+              }
+              .accordion-body {
+                background-color: #111111;
+                color: white;
+                .paragraphs {
+                  display: flex;
+                  p {
+                    padding: 0.5rem 1rem;
+                    margin: 0.5rem;
+                    border-radius: 5px;
+                    background-color: #5729d8;
+                    color: white;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .col-7 {
+          border-left: 1px solid white;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+  }
+}
