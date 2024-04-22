@@ -1,0 +1,50 @@
+$base-co: #0d0133;
+$sec-co: #35ae99;
+
+footer {
+  backdrop-filter: blur(50px);
+  padding: 2rem 4rem;
+  color: white !important;
+  section {
+    position: relative;
+    .logo {
+      margin-bottom: 1rem;
+    }
+    .content {
+      font-weight: 300;
+    }
+    .hover {
+      .widget {
+        ul {
+          li {
+            a {
+              cursor: pointer;
+              &:hover {
+                color: wheat !important;
+              }
+            }
+          }
+        }
+      }
+    }
+    .icons {
+      ul {
+        position: absolute;
+        right: 0;
+        bottom: 2rem;
+        li {
+          a {
+            color: white !important;
+            &:hover {
+              color: wheat !important;
+            }
+          }
+        }
+      }
+    }
+  }
+  .copyright {
+    text-align: center;
+    font-weight: 300;
+  }
+}
