@@ -591,11 +591,11 @@
     </div>
   </section>
   <section class="feedbacks section">
+    <div class="title">
+      <h2>FEEDBACKS</h2>
+    </div>
+    <h1 class="header">What Our Clients Say</h1>
     <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
-      <div class="title">
-        <h2>FEEDBACKS</h2>
-      </div>
-      <h1 class="header">What Our Clients Say</h1>
       <div class="clints">
         <div class="top-line">
           <img src="assets/images/home/feedback/UI Avatars-1.png" />
@@ -654,7 +654,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h4>Lucas Digne</h4>
-              <p>Partner & CEO, Telecommunication Company</p>
+              <p class="opacity-75">Partner & CEO, Telecommunication Company</p>
               <p class="opacity-75">
                 “We encountered a problem with processing big data and after
                 only 1 week, iteck,s Experts provided perfect IT Solutions, fast
@@ -678,7 +678,7 @@
           <div class="container">
             <div class="carousel-caption">
               <h4>Lucas Digne</h4>
-              <p>Partner & CEO, Telecommunication Company</p>
+              <p class="opacity-75">Partner & CEO, Telecommunication Company</p>
               <p class="opacity-75">
                 “We encountered a problem with processing big data and after
                 only 1 week, iteck,s Experts provided perfect IT Solutions, fast
@@ -762,7 +762,7 @@
           </div>
         </div>
         <form>
-          <div class="row g-2 mb-3">
+          <div class="row g-3 mb-3">
             <div class="col-md">
               <label for="name" class="form-label">Your name</label>
               <input type="text" class="form-control" id="name" />
@@ -776,31 +776,33 @@
             <label for="email" class="form-label">Email address</label>
             <input type="email" class="form-control" id="email" />
           </div>
-          <div class="pickers-wrapper">
+          <div class="pickers-wrapper mb-3">
             <div class="form-group">
               <div class="form-date-picker">
+                <label igxLabel>Select Date</label>
                 <igx-date-picker
                   #datePicker
                   name="date-picker"
                   [(ngModel)]="date"
                 >
-                  <label igxLabel>Date</label>
                 </igx-date-picker>
               </div>
               <div class="form-time-picker">
+                <label igxLabel>Select timeslot</label>
                 <igx-time-picker
                   name="time-picker"
                   [(ngModel)]="date"
                   [disabled]="datePicker.value ? false : true"
                 >
-                  <label igxLabel>Time</label>
                 </igx-time-picker>
               </div>
             </div>
-            <p class="text">
-              Selected date: {{ date ? date.toLocaleString() : null }}
-            </p>
           </div>
+          <div class="mb-3 note">
+            <label for="note" class="form-label">Note</label>
+            <input type="text" class="form-control" id="note" />
+          </div>
+          <button class="btn">Book free</button>
         </form>
       </div>
       <div class="booking-img">

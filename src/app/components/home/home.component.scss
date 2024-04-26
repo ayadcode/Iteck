@@ -591,24 +591,17 @@ button {
   .feedbacks {
     margin-left: 10rem;
     margin-right: 10rem;
+    @include breakpoints(mobile) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .header {
+      color: white;
+      text-align: center;
+    }
     .carousel {
-      h1 {
-        color: white;
-        text-align: center;
-      }
       .clints {
         margin: 6rem 0;
-        .top-line,
-        .bottom-line {
-          display: flex;
-          justify-content: space-evenly;
-          img {
-            width: 4rem;
-          }
-        }
-        .bottom-line {
-          margin: 0 4rem;
-        }
       }
       .quote {
         text-align: center;
@@ -692,21 +685,43 @@ button {
         }
         form {
           width: 85%;
+          .email,
+          .row,
+          .note {
+            input {
+              padding: 13px 0;
+            }
+          }
           .pickers-wrapper {
             display: flex;
             flex-direction: column;
             .form-group {
               display: flex;
               flex: 1;
-              width: 450px;
-              .form-date-picker {
-                flex: 50%;
-              }
+              .form-date-picker,
               .form-time-picker {
                 flex: 50%;
+                label {
+                  color: white;
+                }
+                igx-date-picker,
+                igx-time-picker {
+                  background-color: white;
+                  border-radius: 10px;
+                }
+              }
+              .form-time-picker {
                 margin-left: 16px;
+                border-bottom: none;
               }
             }
+          }
+          .btn {
+            color: white;
+            background-color: $primary;
+            border-radius: 25px;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
           }
         }
       }
