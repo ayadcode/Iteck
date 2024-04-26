@@ -15,10 +15,6 @@ button {
   outline: none;
 }
 
-.section {
-  margin-bottom: 10rem;
-}
-
 .header,
 .pragraph {
   margin-bottom: 1.5rem;
@@ -33,6 +29,7 @@ button {
     position: relative;
     border-bottom: 3px solid $primary;
     padding-bottom: 15px;
+    font-size: 28px;
     span {
       color: $primary;
     }
@@ -50,17 +47,61 @@ button {
   }
 }
 
+@mixin breakpoints($point) {
+  @if $point == mobile {
+    @media (max-width: 450px) {
+      @content;
+    }
+  } @else if $point == small {
+    @media (min-width: 451px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (min-width: 768px) and (max-width: 992px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (min-width: 993px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point == XLarge {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+.section {
+  margin-bottom: 10rem;
+  @include breakpoints(mobile) {
+    margin-bottom: 5rem;
+  }
+}
 // __________ global ______________
 
 .main {
   margin-top: 10rem;
+  @include breakpoints(mobile) {
+    margin-top: 3rem;
+  }
+  @include breakpoints(medium) {
+    margin-top: 3rem;
+  }
   .hero {
     position: relative;
     .background {
       position: absolute;
       top: -15rem;
       right: 0rem;
-      width: 80%;
+      width: 75%;
+      @include breakpoints(mobile) {
+        top: 21rem;
+        width: 140%;
+      }
+      @include breakpoints(medium) {
+        top: -4rem;
+        width: 81%;
+      }
     }
     .github1 {
       position: absolute;
@@ -82,14 +123,21 @@ button {
       left: 30%;
     }
     .hero-container {
-      margin-bottom: 25rem;
       .hero-content {
+        width: 40%;
+        @include breakpoints(mobile) {
+          width: 90%;
+          margin: 0 1rem;
+        }
+        @include breakpoints(medium) {
+          width: 56%;
+        }
         h3 {
           color: $primary;
         }
         h1 {
           color: white;
-          font-size: 50px;
+          font-size: 35px;
           .lg {
             font-weight: 700;
           }
@@ -97,18 +145,18 @@ button {
             color: $primary;
           }
           .sm {
-            font-size: 40px;
+            font-size: 30px;
             font-weight: 400;
           }
         }
         p {
           color: white;
-          font-size: 22px;
+          font-size: 18px;
         }
         .contact {
           position: relative;
           .control {
-            padding: 15px 80px 15px 20px;
+            padding: 10px 60px 10px 15px;
             width: 100%;
             border-radius: 5px;
             border: 1px solid #d9d9d9;
@@ -123,7 +171,7 @@ button {
             position: absolute;
             background-color: $primary;
             color: white;
-            padding: 16px 32px 16px 40px;
+            padding: 10px 25px 10px 30px;
             border-radius: 32px;
             font-size: 18px;
           }
@@ -132,13 +180,32 @@ button {
       .hero-img {
         .hero-photo {
           position: absolute;
-          top: -50%;
-          left: 53%;
+          top: -75%;
+          left: 55%;
+          width: 37%;
+          @include breakpoints(mobile) {
+            top: 140%;
+            left: 9%;
+            width: 82%;
+          }
+          @include breakpoints(medium) {
+            top: 0;
+            left: 55%;
+            width: 40%;
+          }
         }
       }
     }
   }
   .guide {
+    margin-top: 15rem;
+    @include breakpoints(mobile) {
+      margin-top: 30rem;
+    }
+    @include breakpoints(medium) {
+      margin-top: 10rem;
+      margin-bottom: 5rem;
+    }
     @keyframes animate {
       from {
         transform: translateX(0);
@@ -157,12 +224,19 @@ button {
         backdrop-filter: blur(50px);
         .slide {
           display: inline-block;
-          padding: 1.5rem 0;
+          padding: 1rem 0;
           animation: 25s animate infinite linear;
+          @include breakpoints(mobile) {
+            padding: 0.7rem 0;
+          }
           span {
             color: white;
-            font-size: 24px;
+            font-size: 18px;
             margin-right: 5rem;
+            @include breakpoints(mobile) {
+              margin-right: 1.5rem;
+              font-size: 14px;
+            }
           }
         }
       }
@@ -170,12 +244,21 @@ button {
   }
   .services {
     position: relative;
+    @include breakpoints(medium) {
+      margin-top: 0rem;
+    }
     .container {
       .cards {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-
+        @include breakpoints(mobile) {
+          display: block;
+        }
+        @include breakpoints(medium) {
+          display: grid;
+          grid-template-columns: auto auto;
+        }
         .card {
           position: relative;
           z-index: 10;
@@ -183,7 +266,6 @@ button {
           padding: 1.5rem;
           background: rgba(255, 255, 255, 0.1);
           box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
-          border: 1px solid $primary;
           backdrop-filter: blur(50px);
           margin: 1rem;
           .card-head,
@@ -265,6 +347,12 @@ button {
           border-left: 1px solid white;
           display: flex;
           justify-content: flex-end;
+          .img {
+            display: none;
+            &.active {
+              display: block;
+            }
+          }
         }
       }
     }
@@ -274,6 +362,10 @@ button {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @include breakpoints(mobile) {
+        display: block;
+        margin-left: 0.8rem;
+      }
       .about-content {
         .title {
           justify-content: flex-start;
@@ -287,6 +379,10 @@ button {
         .pragraph {
           font-size: 20px;
           width: 80%;
+          @include breakpoints(mobile) {
+            width: 90%;
+            font-size: 18px;
+          }
         }
         .rates {
           display: flex;
@@ -309,7 +405,17 @@ button {
             img {
               padding-right: 1rem;
               width: 30%;
+              @include breakpoints(mobile) {
+                width: 45%;
+              }
             }
+          }
+        }
+      }
+      .about-img {
+        img {
+          @include breakpoints(mobile) {
+            width: 100%;
           }
         }
       }
@@ -319,14 +425,14 @@ button {
     .container {
       display: flex;
       align-items: center;
-      .why-img {
-        img {
-          width: 110%;
-          margin-right: 3rem;
-        }
+      @include breakpoints(mobile) {
+        display: block;
       }
       .why-content {
         margin-left: 4rem;
+        @include breakpoints(mobile) {
+          margin-left: 0.8rem;
+        }
         .title {
           justify-content: flex-start;
         }
@@ -361,6 +467,15 @@ button {
           }
         }
       }
+      .why-img {
+        img {
+          width: 100%;
+          margin-right: 3rem;
+          @include breakpoints(mobile) {
+            width: 100%;
+          }
+        }
+      }
     }
   }
   .cycle {
@@ -370,6 +485,9 @@ button {
         position: absolute;
         left: 30%;
         bottom: 0;
+        @include breakpoints(mobile) {
+          display: none;
+        }
       }
       .header,
       .pragraph {
@@ -380,12 +498,20 @@ button {
         font-size: 24px;
         font-weight: lighter;
         margin: 2rem 15rem;
+        @include breakpoints(mobile) {
+          margin: 0 0.5rem 2rem 0.5rem;
+        }
       }
       .row {
         position: relative;
+        @include breakpoints(mobile) {
+          display: block;
+          margin: 0 0.5rem;
+        }
         .col {
           z-index: 5;
           text-align: center;
+
           h3 {
             padding-top: 1rem;
           }
@@ -397,21 +523,104 @@ button {
         }
         .down {
           margin-top: 5rem;
+          @include breakpoints(mobile) {
+            margin: 0;
+          }
         }
         .vector {
           position: absolute;
           width: 17%;
+          @include breakpoints(mobile) {
+            width: 93%;
+          }
           &.vector1 {
             left: 17%;
             top: 11%;
+            @include breakpoints(mobile) {
+              display: none;
+            }
           }
           &.vector2 {
             left: 42%;
             top: 37%;
+            @include breakpoints(mobile) {
+              display: none;
+            }
           }
           &.vector3 {
             right: 16%;
             top: 8%;
+            @include breakpoints(mobile) {
+              display: none;
+            }
+          }
+          &.vector4 {
+            display: none;
+            @include breakpoints(mobile) {
+              display: block;
+              width: 30%;
+              right: -1rem;
+              top: 7rem;
+              transform: rotateZ(0deg);
+            }
+          }
+          &.vector5 {
+            display: none;
+            @include breakpoints(mobile) {
+              display: block;
+              width: 30%;
+              left: -1rem;
+              top: 26rem;
+              transform: rotateX(20deg);
+            }
+          }
+          &.vector6 {
+            display: none;
+            @include breakpoints(mobile) {
+              display: block;
+              width: 30%;
+              right: -1rem;
+              top: 46rem;
+              transform: rotateZ(0deg);
+            }
+          }
+        }
+      }
+    }
+  }
+  .feedbacks {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    .carousel {
+      h1 {
+        color: white;
+        text-align: center;
+      }
+      .clints {
+        margin: 6rem 0;
+        .top-line,
+        .bottom-line {
+          display: flex;
+          justify-content: space-evenly;
+          img {
+            width: 4rem;
+          }
+        }
+        .bottom-line {
+          margin: 0 4rem;
+        }
+      }
+      .quote {
+        text-align: center;
+      }
+      .btnn {
+        font-size: 45px;
+      }
+      .carousel-inner {
+        .carousel-item {
+          .carousel-caption {
+            position: absolute;
+            top: 10px;
           }
         }
       }
@@ -436,6 +645,7 @@ button {
     }
     .news {
       overflow: hidden;
+
       .news-slide {
         white-space: nowrap;
         .slide {
@@ -443,9 +653,19 @@ button {
         }
         &.top-slide {
           animation: 25s top infinite linear;
+          img {
+            @include breakpoints(mobile) {
+              width: 50%;
+            }
+          }
         }
         &.bottom-slide {
           animation: 25s bottom infinite linear;
+          img {
+            @include breakpoints(mobile) {
+              width: 50%;
+            }
+          }
         }
       }
     }
@@ -472,6 +692,22 @@ button {
         }
         form {
           width: 85%;
+          .pickers-wrapper {
+            display: flex;
+            flex-direction: column;
+            .form-group {
+              display: flex;
+              flex: 1;
+              width: 450px;
+              .form-date-picker {
+                flex: 50%;
+              }
+              .form-time-picker {
+                flex: 50%;
+                margin-left: 16px;
+              }
+            }
+          }
         }
       }
     }

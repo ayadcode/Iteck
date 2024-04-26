@@ -1,14 +1,22 @@
 import { Component } from '@angular/core';
-import { InputTextModule } from 'primeng/inputtext';
-import { ButtonModule } from 'primeng/button';
-import { InputMaskModule } from 'primeng/inputmask';
-import { CalendarModule } from 'primeng/calendar';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { IgxDatePickerModule, IgxTimePickerModule } from 'igniteui-angular';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule, InputTextModule, InputMaskModule, CalendarModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    IgxDatePickerModule,
+    IgxTimePickerModule,
+  ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss',
 })
-export class HomeComponent {}
+export class HomeComponent {
+  public date = new Date();
+}
