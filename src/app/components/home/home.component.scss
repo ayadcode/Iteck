@@ -170,50 +170,15 @@
     }
     .container {
       .cards {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
         @include breakpoints(mobile) {
           display: block;
         }
         @include breakpoints(medium) {
           display: grid;
-          grid-template-columns: auto auto;
+          grid-template-columns: repeat(2, 1fr);
         }
-        .card {
-          position: relative;
-          z-index: 10;
-          flex: 0 1 30%;
-          padding: 1.5rem;
-          margin: 1rem;
-          .card-head,
-          .card-para {
-            color: white;
-          }
-          .card-link {
-            display: flex;
-            justify-content: end;
-            a {
-              color: $primary;
-            }
-          }
-          .card-imge {
-            padding: 1rem 0;
-          }
-        }
-      }
-    }
-    .big {
-      position: absolute;
-      top: 20%;
-      right: 8%;
-    }
-    .smail {
-      position: absolute;
-      top: 40%;
-      left: 15%;
-      img {
-        width: 50%;
       }
     }
   }
