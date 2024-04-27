@@ -1,0 +1,217 @@
+@import "../../../assets/_genral";
+
+.main {
+  margin-top: 10rem;
+  .background-img {
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+    }
+  }
+  @include breakpoints(mobile) {
+    margin-top: 3rem;
+  }
+  @include breakpoints(medium) {
+    margin-top: 3rem;
+  }
+  .show-cases {
+    .header,
+    .pragraph {
+      text-align: center;
+      color: white;
+    }
+    .links {
+      display: grid;
+      justify-content: center;
+      align-content: center;
+      margin-top: 2rem;
+      .transparent-background {
+        padding: 0.5rem 0.5rem;
+        border-radius: 5rem;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        gap: 3rem;
+        grid-auto-flow: column;
+        align-items: center;
+        border: 0.5px solid rgba(255, 255, 255, 0.2);
+        .link {
+          font-size: 20px;
+          align-items: center;
+          padding: 0 0.5rem;
+          z-index: 10;
+        }
+      }
+    }
+    .card-group {
+      margin: 5rem 10rem;
+      display: grid;
+      .card {
+        border-radius: 10px;
+        .card-body {
+          .card-title,
+          .card-title,
+          .card-text {
+            color: white;
+          }
+          .paragraphs {
+            display: flex;
+            p {
+              padding: 0.5rem 1rem;
+              margin: 0.5rem;
+              border-radius: 5px;
+              background-color: transparent;
+              color: white;
+              border: 1px solid white;
+            }
+          }
+        }
+      }
+    }
+  }
+  .feedbacks {
+    margin-left: 10rem;
+    margin-right: 10rem;
+    @include breakpoints(mobile) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .header {
+      color: white;
+      text-align: center;
+    }
+    .carousel {
+      .clints {
+        margin: 4rem 0;
+      }
+      .quote {
+        text-align: center;
+      }
+      .btnn {
+        font-size: 45px;
+      }
+      .carousel-inner {
+        .carousel-item {
+          .carousel-caption {
+            position: absolute;
+            top: 10px;
+            p {
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .tech-news {
+    @keyframes top {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+    @keyframes bottom {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+    .news {
+      overflow: hidden;
+
+      .news-slide {
+        white-space: nowrap;
+        .slide {
+          display: inline-block;
+        }
+        &.top-slide {
+          animation: 25s top infinite linear;
+          img {
+            @include breakpoints(mobile) {
+              width: 50%;
+            }
+          }
+        }
+        &.bottom-slide {
+          animation: 25s bottom infinite linear;
+          img {
+            @include breakpoints(mobile) {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .booking {
+    background-color: #2c1c92;
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5rem 0;
+      .booking-content {
+        color: white;
+        .services {
+          .services-items {
+            display: flex;
+            p {
+              border: 1px solid white;
+              border-radius: 20px;
+              margin-right: 1rem;
+              padding: 0.5rem 1rem;
+            }
+          }
+        }
+        form {
+          width: 85%;
+          .email,
+          .row,
+          .note {
+            input {
+              padding: 13px 0;
+            }
+          }
+          .pickers-wrapper {
+            display: flex;
+            flex-direction: column;
+            .form-group {
+              display: flex;
+              flex: 1;
+              .form-date-picker,
+              .form-time-picker {
+                flex: 50%;
+                label {
+                  color: white;
+                }
+                igx-date-picker,
+                igx-time-picker {
+                  background-color: white;
+                  border-radius: 10px;
+                }
+              }
+              .form-time-picker {
+                margin-left: 16px;
+                border-bottom: none;
+              }
+            }
+          }
+          .btn {
+            color: white;
+            background-color: $primary;
+            border-radius: 25px;
+            padding: 0.8rem 2rem;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}

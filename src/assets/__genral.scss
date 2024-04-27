@@ -1,0 +1,100 @@
+$primary: #5729d8;
+
+@mixin breakpoints($point) {
+  @if $point == mobile {
+    @media (max-width: 450px) {
+      @content;
+    }
+  } @else if $point == small {
+    @media (min-width: 451px) and (max-width: 767px) {
+      @content;
+    }
+  } @else if $point == medium {
+    @media (min-width: 768px) and (max-width: 992px) {
+      @content;
+    }
+  } @else if $point == large {
+    @media (min-width: 993px) and (max-width: 1199px) {
+      @content;
+    }
+  } @else if $point == XLarge {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
+
+// __________ Mixins ______________
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  outline: none;
+}
+
+button {
+  outline: none;
+}
+
+.header,
+.pragraph {
+  margin-bottom: 1.5rem;
+}
+
+.transparent-background {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: white;
+  margin-bottom: 3rem;
+  h2 {
+    position: relative;
+    border-bottom: 3px solid $primary;
+    padding-bottom: 15px;
+    font-size: 28px;
+    span {
+      color: $primary;
+    }
+    &::before {
+      content: "";
+      width: 25px;
+      height: 25px;
+      background-color: $primary;
+      border-radius: 50%;
+      position: absolute;
+      bottom: -0.8rem;
+      left: 0;
+      box-shadow: 0 0 5px 5px rgba($primary, 0.2);
+    }
+  }
+}
+
+.section {
+  margin-bottom: 10rem;
+  @include breakpoints(mobile) {
+    margin-bottom: 5rem;
+  }
+}
+
+.link-active {
+  background-color: $primary;
+  padding: 0.5rem 2rem !important;
+  border-radius: 5rem;
+}
+
+.active {
+  border-bottom: thin solid $primary !important;
+  color: $primary !important;
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+// __________ global ______________

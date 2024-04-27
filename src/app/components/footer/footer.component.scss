@@ -1,26 +1,4 @@
-@mixin breakpoints($point) {
-  @if $point == mobile {
-    @media (max-width: 450px) {
-      @content;
-    }
-  } @else if $point == small {
-    @media (min-width: 451px) and (max-width: 768px) {
-      @content;
-    }
-  } @else if $point == medium {
-    @media (min-width: 769px) and (max-width: 992px) {
-      @content;
-    }
-  } @else if $point == large {
-    @media (min-width: 993px) and (max-width: 1199px) {
-      @content;
-    }
-  } @else if $point == XLarge {
-    @media (min-width: 1200px) {
-      @content;
-    }
-  }
-}
+@import "../../../assets/_genral";
 
 footer {
   backdrop-filter: blur(50px);

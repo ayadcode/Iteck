@@ -1,37 +1,6 @@
-$primary: #00a6fb;
-
-ul {
-  padding: 0;
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: white;
-  outline: none;
-}
-
-button {
-  outline: none;
-}
-
-.section {
-  margin-bottom: 10rem;
-}
-
-.header,
-.pragraph {
-  margin-bottom: 1.5rem;
-}
-
-.active {
-  border-bottom: thin solid $primary !important;
-  color: $primary !important;
-  transform: scale(1.1);
-  transition: all 0.3s ease;
-}
-
 // __________ global _____________
+
+@import "../../../assets/_genral";
 
 .navbar {
   z-index: 100;
