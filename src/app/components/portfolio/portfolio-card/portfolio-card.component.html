@@ -1,0 +1,24 @@
+<div class="card mb-3 transparent-background">
+  <div class="row g-0">
+    <div class="col-md-6">
+      <div class="card-body">
+        <h2 class="card-title">{{ PCards.title }}</h2>
+        <h5 class="card-title">{{ PCards.subtitle }}</h5>
+        <p class="card-text">
+          {{ PCards.description }}
+        </p>
+        <div class="paragraphs">
+          <p class="p">
+            <img [src]="PCards.buttons.country.imgUrl" />
+            {{ PCards.buttons.country.para }}
+          </p>
+          <p class="p">{{ PCards.buttons.second }}</p>
+          <p class="p">{{ PCards.buttons.third }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img [src]="PCards.imgUrl" class="img-fluid rounded-start" />
+    </div>
+  </div>
+</div>

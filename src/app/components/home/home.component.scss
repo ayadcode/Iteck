@@ -475,8 +475,8 @@
     margin-left: 10rem;
     margin-right: 10rem;
     @include breakpoints(mobile) {
-      margin-left: 0;
-      margin-right: 0;
+      margin-left: 1rem;
+      margin-right: 1rem;
     }
     .header {
       color: white;
@@ -485,6 +485,34 @@
     .carousel {
       .clints {
         margin: 6rem 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        @include breakpoints(mobile) {
+          margin: 3rem 0;
+        }
+        .top-line,
+        .bottom-line {
+          display: grid;
+          justify-content: center;
+          gap: 7rem;
+          @include breakpoints(mobile) {
+            gap: 3rem;
+          }
+          img {
+            @include breakpoints(mobile) {
+              width: 3rem;
+            }
+          }
+        }
+        .top-line {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .bottom-line {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
       .quote {
         text-align: center;
@@ -499,6 +527,9 @@
             top: 10px;
             p {
               margin-bottom: 0.5rem;
+            }
+            @include breakpoints(mobile) {
+              margin: 0 1rem;
             }
           }
         }
@@ -576,6 +607,7 @@
           .note {
             input {
               padding: 13px 0;
+              border-radius: 3px;
             }
           }
           .pickers-wrapper {
@@ -593,7 +625,7 @@
                 igx-date-picker,
                 igx-time-picker {
                   background-color: white;
-                  border-radius: 10px;
+                  border-radius: 3px;
                 }
               }
               .form-time-picker {

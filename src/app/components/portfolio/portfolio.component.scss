@@ -49,27 +49,6 @@
     .card-group {
       margin: 5rem 10rem;
       display: grid;
-      .card {
-        border-radius: 10px;
-        .card-body {
-          .card-title,
-          .card-title,
-          .card-text {
-            color: white;
-          }
-          .paragraphs {
-            display: flex;
-            p {
-              padding: 0.5rem 1rem;
-              margin: 0.5rem;
-              border-radius: 5px;
-              background-color: transparent;
-              color: white;
-              border: 1px solid white;
-            }
-          }
-        }
-      }
     }
   }
   .feedbacks {
@@ -85,7 +64,35 @@
     }
     .carousel {
       .clints {
-        margin: 4rem 0;
+        margin: 6rem 0;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        @include breakpoints(mobile) {
+          margin: 3rem 0;
+        }
+        .top-line,
+        .bottom-line {
+          display: grid;
+          justify-content: center;
+          gap: 7rem;
+          @include breakpoints(mobile) {
+            gap: 3rem;
+          }
+          img {
+            @include breakpoints(mobile) {
+              width: 3rem;
+            }
+          }
+        }
+        .top-line {
+          grid-template-columns: repeat(4, 1fr);
+        }
+        .bottom-line {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
       .quote {
         text-align: center;
@@ -100,6 +107,9 @@
             top: 10px;
             p {
               margin-bottom: 0.5rem;
+            }
+            @include breakpoints(mobile) {
+              margin: 0 1rem;
             }
           }
         }
@@ -177,6 +187,7 @@
           .note {
             input {
               padding: 13px 0;
+              border-radius: 3px;
             }
           }
           .pickers-wrapper {
@@ -194,7 +205,7 @@
                 igx-date-picker,
                 igx-time-picker {
                   background-color: white;
-                  border-radius: 10px;
+                  border-radius: 3px;
                 }
               }
               .form-time-picker {
