@@ -1,15 +1,21 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CardComponent } from './card/card.component';
+import { AboutCardComponent } from './about-card/about-card.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 
 import { IgxDatePickerModule, IgxTimePickerModule } from 'igniteui-angular';
 import { ICard } from '../../model/ICard';
+import { ACard } from '../../model/ACard';
+import { feedback } from '../../model/feedback';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     CardComponent,
+    AboutCardComponent,
+    FeedbackComponent,
     FormsModule,
     IgxDatePickerModule,
     IgxTimePickerModule,
@@ -62,6 +68,55 @@ export class HomeComponent {
       imgUrl: 'assets/images/home/services/e-commerce.png',
       description:
         'With an ecommerce solution in website customers can view your storefront through their PC or mobile.',
+    },
+  ];
+  readonly ACards: Array<ACard> = [
+    {
+      id: 1,
+      imgUrl: 'assets/images/home/about/years.png',
+      numbers: +20,
+      description: 'YEARS OF EXPERIENCE',
+    },
+    {
+      id: 2,
+      imgUrl: 'assets/images/home/about/projects.png',
+      numbers: +15,
+      description: 'PROJECTS COMPLETED',
+    },
+    {
+      id: 3,
+      imgUrl: 'assets/images/home/about/achieved.png',
+      numbers: +24,
+      description: 'AEARDS ACHIEVED',
+    },
+    {
+      id: 4,
+      imgUrl: 'assets/images/home/about/clients.png',
+      numbers: +18,
+      description: 'SATISFIED CLIENTS',
+    },
+  ];
+  readonly feedbacks: Array<feedback> = [
+    {
+      id: 1,
+      title: 'Lucas Digne',
+      subtitle: 'Partner & CEO, Telecommunication Company',
+      description:
+        '“We encountered a problem with processing big data and after only 1 week, iteck,s Experts provided perfect IT Solutions, fast process & affordable price we are really satisfied!”',
+    },
+    {
+      id: 2,
+      title: 'Lucas Digne',
+      subtitle: 'Partner & CEO, Telecommunication Company',
+      description:
+        '“We encountered a problem with processing big data and after only 1 week, iteck,s Experts provided perfect IT Solutions, fast process & affordable price we are really satisfied!”',
+    },
+    {
+      id: 3,
+      title: 'Lucas Digne',
+      subtitle: 'Partner & CEO, Telecommunication Company',
+      description:
+        '“We encountered a problem with processing big data and after only 1 week, iteck,s Experts provided perfect IT Solutions, fast process & affordable price we are really satisfied!”',
     },
   ];
 }

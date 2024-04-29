@@ -268,31 +268,8 @@
           }
         }
         .rates {
-          display: flex;
-          justify-content: flex-start;
-          .about-box {
-            border: 1px solid #3423a6;
-            display: flex;
-            align-items: center;
-            padding: 1rem 1rem 0.5rem 1rem;
-            margin: 0rem 1rem 1rem 0rem;
-            border-radius: 1rem;
-            background-color: rgba(#3423a6, 0.1);
-            backdrop-filter: blur(50px);
-            box-shadow: 1px 1px 10px rgba(#3423a6, 0.5);
-            .info {
-              p {
-                font-size: 14px;
-              }
-            }
-            img {
-              padding-right: 1rem;
-              width: 30%;
-              @include breakpoints(mobile) {
-                width: 45%;
-              }
-            }
-          }
+          display: grid;
+          grid-template-columns: auto auto;
         }
       }
       .about-img {
@@ -309,7 +286,7 @@
       display: flex;
       align-items: center;
       @include breakpoints(mobile) {
-        display: block;
+        flex-direction: column-reverse;
       }
       .why-content {
         margin-left: 4rem;
@@ -331,6 +308,8 @@
           width: 80%;
         }
         .rates {
+          display: grid;
+          grid-template-columns: auto;
           .why-box {
             border: 1px solid #3423a6;
             display: flex;
@@ -338,9 +317,6 @@
             padding: 1rem 5rem 0.5rem 1rem;
             margin: 0rem 1rem 1rem 0rem;
             border-radius: 1rem;
-            background-color: rgba(#3423a6, 0.1);
-            backdrop-filter: blur(50px);
-            box-shadow: 1px 1px 10px rgba(#3423a6, 0.5);
             p {
               font-size: 14px;
             }
@@ -594,7 +570,7 @@
             display: flex;
             p {
               border: 1px solid white;
-              border-radius: 20px;
+              border-radius: 3px;
               margin-right: 1rem;
               padding: 0.5rem 1rem;
             }
@@ -637,7 +613,7 @@
           .btn {
             color: white;
             background-color: $primary;
-            border-radius: 25px;
+            border-radius: 3px;
             padding: 0.8rem 2rem;
             font-weight: 600;
           }

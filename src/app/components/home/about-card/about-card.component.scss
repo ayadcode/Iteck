@@ -1,0 +1,22 @@
+@import "../../../../assets/_genral";
+
+.about-box {
+  border: 1px solid #3423a6;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem 0.5rem 1rem;
+  margin: 0rem 1rem 1rem 0rem;
+  border-radius: 1rem;
+  .info {
+    p {
+      font-size: 14px;
+    }
+  }
+  img {
+    padding-right: 1rem;
+    width: 30%;
+    @include breakpoints(mobile) {
+      width: 45%;
+    }
+  }
+}

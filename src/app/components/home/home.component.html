@@ -336,38 +336,9 @@
           design, QA and consultancy services.
         </p>
         <div class="rates">
-          <div>
-            <div class="experince about-box">
-              <img src="assets/images/home/about/years.png" />
-              <div class="info">
-                <h3>+20</h3>
-                <p>YEARS OF EXPERIENCE</p>
-              </div>
-            </div>
-            <div class="rate about-box">
-              <img src="assets/images/home/about/projects.png" />
-              <div class="info">
-                <h3>15K</h3>
-                <p>PROJECTS COMPLETED</p>
-              </div>
-            </div>
-          </div>
-          <div>
-            <div class="team-members about-box">
-              <img src="assets/images/home/about/achieved.png" />
-              <div class="info">
-                <h3>240</h3>
-                <p>AEARDS ACHIEVED</p>
-              </div>
-            </div>
-            <div class="projects about-box">
-              <img src="assets/images/home/about/clients.png" />
-              <div class="info">
-                <h3>180</h3>
-                <p>SATISFIED CLIENTS</p>
-              </div>
-            </div>
-          </div>
+          @for (ACard of ACards; track ACard.id) {
+          <app-about-card [ACards]="ACard" />
+          }
         </div>
       </div>
       <div class="about-img">
@@ -389,7 +360,7 @@
           <span>IT service</span>
         </h1>
         <div class="rates">
-          <div class="experince why-box">
+          <div class="experince why-box transparent-background">
             <img src="assets/images/home/why/Price.png" />
             <div class="info">
               <h4>Affordable Price</h4>
@@ -399,7 +370,7 @@
               </p>
             </div>
           </div>
-          <div class="rate why-box">
+          <div class="rate why-box transparent-background">
             <img src="assets/images/home/why/crown.png" />
             <div class="info">
               <h4>Top-Notch Experts Consulting</h4>
@@ -409,7 +380,7 @@
               </p>
             </div>
           </div>
-          <div class="team-members why-box">
+          <div class="team-members why-box transparent-background">
             <img src="assets/images/home/why/Chat.png" />
             <div class="info">
               <h4>Dedicated Support 24/7</h4>

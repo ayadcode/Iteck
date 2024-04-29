@@ -9,6 +9,10 @@
       right: 0;
       top: 0;
       width: 100%;
+      @include breakpoints(mobile) {
+        width: 30rem;
+        left: -11%;
+      }
     }
   }
   @include breakpoints(mobile) {
@@ -38,17 +42,26 @@
         grid-auto-flow: column;
         align-items: center;
         border: 0.5px solid rgba(255, 255, 255, 0.2);
+        @include breakpoints(mobile) {
+          gap: 2rem;
+        }
         .link {
           font-size: 20px;
           align-items: center;
           padding: 0 0.5rem;
           z-index: 10;
+          @include breakpoints(mobile) {
+            font-size: 16px;
+          }
         }
       }
     }
     .card-group {
       margin: 5rem 10rem;
       display: grid;
+      @include breakpoints(mobile) {
+        margin: 5rem 1rem;
+      }
     }
   }
   .feedbacks {
@@ -174,7 +187,7 @@
             display: flex;
             p {
               border: 1px solid white;
-              border-radius: 20px;
+              border-radius: 3px;
               margin-right: 1rem;
               padding: 0.5rem 1rem;
             }
@@ -217,7 +230,7 @@
           .btn {
             color: white;
             background-color: $primary;
-            border-radius: 25px;
+            border-radius: 3px;
             padding: 0.8rem 2rem;
             font-weight: 600;
           }
