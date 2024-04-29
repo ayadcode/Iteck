@@ -2,21 +2,70 @@
 
 .main {
   margin-top: 3rem;
-  .container {
-    .header,
-    .description,
-    .paragraphs {
-      color: white;
-    }
-    .paragraphs {
-      display: flex;
-      p {
-        padding: 0.5rem 1rem;
-        margin: 0.5rem 1rem 0.5rem 0;
-        border-radius: 5px;
-        background-color: transparent;
+  .hero {
+    .container {
+      .header,
+      .description,
+      .paragraphs {
         color: white;
-        border: 1px solid white;
+      }
+      .paragraphs {
+        display: flex;
+        p {
+          padding: 0.5rem 1rem;
+          border-radius: 5px;
+          background-color: transparent;
+          color: white;
+          border: 1px solid white;
+        }
+      }
+    }
+    .hero-img {
+      margin-top: 1.5rem;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .challenge {
+    .container {
+      .title {
+        justify-content: start;
+      }
+      .desciption {
+        color: white;
+        font-size: 20px;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 2rem 0 7rem 0;
+        .card {
+          position: relative;
+          z-index: 10;
+          flex: 0 1 30%;
+          padding: 1.5rem;
+          margin: 1rem;
+          background-image: url("../../../../assets/images/portfolio/case-study/Group.png");
+          .card-head,
+          .card-para {
+            color: white;
+          }
+          .card-para {
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
+  .solution {
+    .container {
+      .title {
+        justify-content: start;
+      }
+      .desciption {
+        color: white;
+        font-size: 20px;
       }
     }
   }

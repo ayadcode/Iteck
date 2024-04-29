@@ -9,7 +9,7 @@ export const routes: Routes = [
   { path: 'portfolio', title: 'Portfolio', component: PortfolioComponent },
   { path: 'about', title: 'About Us', component: AboutComponent },
   { path: 'contact', title: 'Contact', component: ContactComponent },
-  { path: 'case', title: 'cs', component: CaseStudyComponent },
+  { path: 'case-study', title: 'case-study', component: CaseStudyComponent },
 
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];

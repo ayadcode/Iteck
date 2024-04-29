@@ -4,6 +4,9 @@
 
 .navbar {
   z-index: 100;
+  img {
+    width: 4rem;
+  }
   .navbar-toggler {
     background-color: transparent;
     i {

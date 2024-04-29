@@ -563,6 +563,9 @@
       justify-content: space-between;
       align-items: center;
       padding: 5rem 0;
+      @include breakpoints(mobile) {
+        flex-direction: column-reverse;
+      }
       .booking-content {
         color: white;
         .services {
