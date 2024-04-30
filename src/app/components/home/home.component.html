@@ -66,6 +66,8 @@
       <div class="cards">
         @for (card of cards; track card.id) {
         <app-card [cards]="card" />
+        }@empty {
+        <h1>Not Found</h1>
         }
       </div>
     </div>
