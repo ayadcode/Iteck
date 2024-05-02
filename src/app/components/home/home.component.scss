@@ -95,6 +95,10 @@
             padding: 10px 25px 10px 30px;
             border-radius: 32px;
             font-size: 18px;
+            &:hover {
+              background-color: blue;
+              transition: all 0.3s ease-in-out;
+            }
           }
         }
       }
@@ -564,13 +568,25 @@
       align-items: center;
       padding: 5rem 0;
       @include breakpoints(mobile) {
+        display: flex;
         flex-direction: column-reverse;
+        margin: 0 2rem 0 1rem;
       }
       .booking-content {
         color: white;
+        .header {
+          @include breakpoints(mobile) {
+            font-size: 18px;
+          }
+        }
         .services {
           .services-items {
             display: flex;
+            @include breakpoints(mobile) {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              width: 90%;
+            }
             p {
               border: 1px solid white;
               border-radius: 3px;
@@ -619,6 +635,14 @@
             border-radius: 3px;
             padding: 0.8rem 2rem;
             font-weight: 600;
+          }
+        }
+      }
+      .booking-img {
+        img {
+          @include breakpoints(mobile) {
+            width: 20rem;
+            margin-bottom: 3rem;
           }
         }
       }

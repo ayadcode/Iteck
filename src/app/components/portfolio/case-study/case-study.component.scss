@@ -2,6 +2,7 @@
 
 .main {
   margin-top: 3rem;
+
   .hero {
     .container {
       .header,
@@ -37,10 +38,21 @@
         color: white;
         font-size: 20px;
       }
+      .challenge-img {
+        img {
+          @include breakpoints(mobile) {
+            margin-top: 1rem;
+            width: 23rem;
+          }
+        }
+      }
       .cards {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         margin: 2rem 0 7rem 0;
+        @include breakpoints(mobile) {
+          grid-template-columns: repeat(1, 1fr);
+        }
         .card {
           position: relative;
           z-index: 10;
@@ -61,12 +73,26 @@
   }
   .solution {
     .container {
-      .title {
-        justify-content: start;
-      }
-      .desciption {
-        color: white;
-        font-size: 20px;
+      .row {
+        @include breakpoints(mobile) {
+          display: flex;
+          flex-direction: column-reverse;
+        }
+        .solution-img {
+          img {
+            @include breakpoints(mobile) {
+              margin-top: 3rem;
+              width: 23rem;
+            }
+          }
+        }
+        .title {
+          justify-content: start;
+        }
+        .desciption {
+          color: white;
+          font-size: 20px;
+        }
       }
     }
   }
@@ -76,13 +102,15 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       margin: 0 2rem;
+      @include breakpoints(mobile) {
+        grid-template-columns: repeat(1, 1fr);
+      }
       .card {
         display: flex;
         flex-direction: row;
         align-items: center;
         padding: 1rem;
         border: 1px solid $primary;
-
         h1 {
           background-color: $primary;
           border-radius: 50%;
@@ -91,6 +119,8 @@
           padding-left: 1rem;
           margin-right: 1rem;
           margin-bottom: 0;
+          @include breakpoints(mobile) {
+          }
         }
         p {
           font-size: 20px;
@@ -105,10 +135,28 @@
       position: relative;
       display: flex;
       justify-content: center;
+      width: 100%;
+      img {
+        @include breakpoints(mobile) {
+          width: 20rem;
+        }
+      }
       .frame {
         position: absolute;
         bottom: 59px;
         left: 17%;
+        width: 907px;
+        @include breakpoints(mobile) {
+          display: none;
+        }
+        @include breakpoints(XLarge) {
+          bottom: 59px;
+          left: 23.5%;
+        }
+        iframe {
+          width: 990px;
+          height: 562px;
+        }
       }
     }
     .demos {
@@ -116,8 +164,14 @@
       grid-template-columns: auto auto;
       margin: 5rem 4rem;
       gap: 30px;
+      @include breakpoints(mobile) {
+        grid-template-columns: auto;
+        margin: 3rem 2rem;
+        gap: 20px;
+      }
       img {
         border-radius: 10px;
+        width: 100%;
       }
     }
   }
@@ -133,7 +187,13 @@
       grid-template-columns: auto auto;
       margin: 5rem 4rem;
       gap: 30px;
+      @include breakpoints(mobile) {
+        grid-template-columns: auto;
+        margin: 3rem 2rem;
+        gap: 20px;
+      }
       img {
+        width: 100%;
         border-radius: 10px;
       }
     }
@@ -255,13 +315,25 @@
       align-items: center;
       padding: 5rem 0;
       @include breakpoints(mobile) {
+        display: flex;
         flex-direction: column-reverse;
+        margin: 0 2rem 0 1rem;
       }
       .booking-content {
         color: white;
+        .header {
+          @include breakpoints(mobile) {
+            font-size: 18px;
+          }
+        }
         .services {
           .services-items {
             display: flex;
+            @include breakpoints(mobile) {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              width: 90%;
+            }
             p {
               border: 1px solid white;
               border-radius: 3px;
@@ -310,6 +382,14 @@
             border-radius: 3px;
             padding: 0.8rem 2rem;
             font-weight: 600;
+          }
+        }
+      }
+      .booking-img {
+        img {
+          @include breakpoints(mobile) {
+            width: 20rem;
+            margin-bottom: 3rem;
           }
         }
       }
